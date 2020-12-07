@@ -10,8 +10,8 @@ DEVICE_IP = '192.168.0.129'
 
 
 # Title and subtitle to display on header
-HEADER_TITLE = 'Dashboard title'
-HEADER_SUBTITLE = 'Dashboard subtitle'
+HEADER_TITLE = 'Carnet de notes'
+HEADER_SUBTITLE = 'ETA 6045'
 
 # Name and bio of the project contributors. Displayed in About tab.
 CONTRIBUTORS = {

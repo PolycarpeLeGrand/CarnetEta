@@ -5,8 +5,8 @@ from dash.dependencies import Input, Output, State
 
 from dashapp import app, DATA
 from dashapp.header import header
-from dashapp.exampletab.exampletab import example_tab
-from dashapp.abouttab import about_tab
+from dashapp.tabletab.tabletab import table_tab
+from dashapp.bibliotab.bibliotab import biblio_tab
 
 
 # Declare tabs following this format, 1 dist per tab
@@ -14,8 +14,8 @@ from dashapp.abouttab import about_tab
 # Replace search_key, search_value and target_key accordingly
 # next(filter(lambda x: x['search_key'] == 'search_value', TABS))['target_key']
 TABS = [
-    {'name': 'tab-0', 'url': '/extab', 'label': 'Example Tab', 'container': example_tab},
-    {'name': 'tab-1', 'url': '/about', 'label': 'About', 'container': about_tab},
+    {'name': 'tab-0', 'url': '/tabletab', 'label': 'Notes', 'container': table_tab},
+    {'name': 'tab-1', 'url': '/biblio', 'label': 'Bibliographie', 'container': biblio_tab},
 ]
 
 

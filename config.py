@@ -8,6 +8,8 @@ from pathlib import Path
 PORT = 33
 DEVICE_IP = '192.168.0.129'
 
+# Browser tab title
+PROJECT_TITLE = 'Carnet'
 
 # Title and subtitle to display on header
 HEADER_TITLE = 'Carnet de notes'

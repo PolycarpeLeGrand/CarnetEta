@@ -3,7 +3,7 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 
-from dashapp import app, DATA
+from dashapp import app
 from dashapp.header import header
 from dashapp.tabletab.tabletab import table_tab
 from dashapp.bibliotab.bibliotab import biblio_tab

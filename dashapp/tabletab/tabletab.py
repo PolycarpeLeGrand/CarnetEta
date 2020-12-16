@@ -23,8 +23,8 @@ table_tab_jumbotron = jumbotron_2_columns(title, jumbo_text_1, '')
 
 table_card = dash_table.DataTable(
     id='data-table',
-    columns=[{'name': 'Cours', 'id': 'course'}, {'name': 'Type', 'id': 'type'}, {'name': 'Document', 'id': 'doc'}],
-    data=DF[['course', 'type', 'doc']].to_dict('records'),
+    columns=[{'name': 'Conseil', 'id': 'num'}, {'name': 'Cours', 'id': 'course'}, {'name': 'Type', 'id': 'type'}, {'name': 'Document', 'id': 'doc'}],
+    data=DF[['num', 'course', 'type', 'doc']].to_dict('records'),
     active_cell={'row': 0, 'column': 0},
     page_action='none',
     style_as_list_view=True,
@@ -75,12 +75,12 @@ table_tab = dbc.Container([
      Output(component_id='data-table', component_property='selected_cells')],
     [Input(component_id='data-table', component_property='active_cell')]
 )
-def update_lexical_heatmap(cell_data):
+def update_panel(cell_data):
     if not cell_data:
         cell_data = {'row': 0, 'column': 0}
-    print(cell_data)
 
-    header = f"{DF.iloc[cell_data['row'], 0]} - {DF.iloc[cell_data['row'], 2]}"
+    header = dcc.Markdown(f"{DF.iloc[cell_data['row'], 4]} - {DF.iloc[cell_data['row'], 0]}  \n"
+                          f"{DF.iloc[cell_data['row'], 1]} - {DF.iloc[cell_data['row'], 2]}")
     markdown = DF.iloc[cell_data['row'], 3]
-    selected_cells = [{'row': cell_data['row'], 'column': i} for i in range(3)]
+    selected_cells = [{'row': cell_data['row'], 'column': i} for i in range(4)]
     return markdown, header, selected_cells
